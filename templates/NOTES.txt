@@ -1,0 +1,14 @@
+ArgoCD Application Info:
+
+Name: {{ include "argocd-template.applicationName" . }}
+Namespace: {{ .Values.argocd.application.namespace }}
+Project: {{ .Values.argocd.application.project }}
+Repo URL: {{ .Values.argocd.application.repoURL }}
+Target Revision: {{ .Values.argocd.application.targetRevision }}
+Path: {{ .Values.argocd.application.path }}
+Destination Server: {{ .Values.argocd.application.destinationServer }}
+Destination Namespace: {{ .Values.argocd.application.destinationNamespace }}
+
+To apply this ArgoCD Application, run:
+
+  kubectl apply -f <rendered-application.yaml>

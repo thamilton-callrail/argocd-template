@@ -1,0 +1,18 @@
+# Default values for application.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+application:
+  namespace: "argocd"
+  project: "default"
+  repoURL: "https://stefanprodan.github.io/podinfo"
+  targetRevision: "HEAD"
+  path: "podinfo/podinfo"
+  destinationServer: "https://kubernetes.default.svc"
+  destinationNamespace: "default"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      createNamespace: true
